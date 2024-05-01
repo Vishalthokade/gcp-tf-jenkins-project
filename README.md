@@ -18,4 +18,7 @@ give it the permission of storage admin to keep things simple for learning
 create its json key and download it
 add the json key file in manage jenkins>Credentials>System>Global credentials (unrestricted) and save it
 this will be GOOGLE_APPLICATION_CREDENTIALS
+go to github profile settings>developer settings>personal access tokens>tokens (classic)> generate new token(classic)
+copy the token and store the copied text somewhere safe
+add the token in manage jenkins>Credentials>System>Global credentials (unrestricted) and save it
 
