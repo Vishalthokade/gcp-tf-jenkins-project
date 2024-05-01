@@ -21,4 +21,23 @@ this will be GOOGLE_APPLICATION_CREDENTIALS
 go to github profile settings>developer settings>personal access tokens>tokens (classic)> generate new token(classic)
 copy the token and store the copied text somewhere safe
 add the token in manage jenkins>Credentials>System>Global credentials (unrestricted) and save it
+create a  pipeline in jenkins, name it, check GitHub hook trigger for GITScm polling option, select GitHub hook trigger for GITScm polling, use */main as branch and script path should be Jenkinsfile
+save the pipeline
+create a webhook to trigger automatic running of pipeline in github: go to repo settings> webhooks> add webhooks> iuse payload url : <jenkins url>github-webhook/; content type: application json; disable SSL verification as we are not using it.
+select add webhook
+make sure that you see a green tick after adding the webhook.
+commit something in repo, it should create a bucket.
+
+Checks: 
+restart jenkins if needed from ssh into the instance using systemctl stop/start/status jenkins
+I faced the error: Couldn't find any revision to build. Verify the repository and branch configuration for this job
+Solution: 
+earlier: git: "https://<token>@github.com/username/repoName.git"
+instead,
+stage ('Git Checkout') {
+  steps {
+      git branch: 'main', url: 'https://<token>@github.com/username/repoName.git'
+     }
+  }
+source: https://stackoverflow.com/questions/23906352/git-pullrequest-job-failed-couldnt-find-any-revision-to-build-verify-the-repo
 
