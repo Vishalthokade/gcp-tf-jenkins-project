@@ -14,7 +14,7 @@ The `Jenkinsfile` in this repository defines the CI/CD pipeline with the followi
 
 ## Terraform Configuration
 
-The `main.tf` file contains the Terraform configuration to create a Google Cloud Storage (GCS) bucket with the following properties:
+The `main.tf` file contains the Terraform configuration to create a Google Cloud Storage (GCS) bucket.
 
 ## Additional Notes
 
