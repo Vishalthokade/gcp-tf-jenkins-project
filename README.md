@@ -28,7 +28,7 @@ A cloud provider account (e.g., Google Cloud Platform) with a deployable Jenkins
 Access to a GitHub repository
 Steps:
 
-## CI/CD Pipeline using Jenkins and Terraform | Github Webhook Trigger
+## CI/CD Pipeline using Jenkins and Terraform | Github Webhook Trigger | Steps
 
 **1.** Deploy a Jenkins instance from marketplace.
 
